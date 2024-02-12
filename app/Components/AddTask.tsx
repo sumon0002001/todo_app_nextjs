@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa";
+import Modal from "./Modal";
 
 const AddTask = () => {
+  const [modelOpen, ModelSetOpen] = useState<boolean>(false);
   return (
     <div>
       <button className="btn btn-primary w-full">
@@ -19,6 +21,7 @@ const AddTask = () => {
           <button type="submit" className="btn">
             Submit
           </button>
+          <Modal modelOpen={modelOpen} />
         </div>
       </form>
     </div>
