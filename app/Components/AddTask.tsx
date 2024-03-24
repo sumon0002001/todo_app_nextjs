@@ -1,12 +1,17 @@
+"use client";
+
 import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa";
 import Modal from "./Modal";
 
 const AddTask = () => {
-  const [modelOpen, ModelSetOpen] = useState<boolean>(false);
+  const [modalOpen, SetModalOpen] = useState<boolean>(false);
   return (
     <div>
-      <button className="btn btn-primary w-full">
+      <button
+        onClick={() => SetModalOpen(true)}
+        className="btn btn-primary w-full"
+      >
         Add new task
         <FaPlus className="ml-2" size={18} />
       </button>
@@ -21,7 +26,7 @@ const AddTask = () => {
           <button type="submit" className="btn">
             Submit
           </button>
-          <Modal modelOpen={modelOpen} />
+          <Modal modalOpen={modalOpen} SetModalOpen={SetModalOpen} />
         </div>
       </form>
     </div>
